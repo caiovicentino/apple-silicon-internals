@@ -68,7 +68,7 @@ def benchmark_gpu_speed():
     """Measure main model throughput on GPU via llama-bench"""
     model_path = None
     for p in [
-        "/Users/caiovicentino/Desktop/try/ANE/inference/Qwen3.5-4B-Q4_K_M.gguf",
+        os.path.expanduser("~/Desktop/try/ANE/inference/Qwen3.5-4B-Q4_K_M.gguf"),
         os.path.expanduser("~/Desktop/try/ANE/inference/Qwen3.5-4B-Q4_K_M.gguf"),
     ]:
         if os.path.exists(p):
@@ -100,7 +100,7 @@ def benchmark_simultaneous(draft_model, duration=10):
     """Run draft on ANE and GPU inference simultaneously, measure both"""
     model_path = None
     for p in [
-        "/Users/caiovicentino/Desktop/try/ANE/inference/Qwen3.5-4B-Q4_K_M.gguf",
+        os.path.expanduser("~/Desktop/try/ANE/inference/Qwen3.5-4B-Q4_K_M.gguf"),
     ]:
         if os.path.exists(p):
             model_path = p
