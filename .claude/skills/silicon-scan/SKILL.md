@@ -10,17 +10,17 @@ Scan a macOS private framework for undocumented APIs.
 
 Scan a specific framework:
 ```bash
-cd /Users/caiovicentino/Desktop/apis && make tools/framework_scanner 2>/dev/null && tools/framework_scanner ${ARGS}
+make tools/framework_scanner 2>/dev/null && tools/framework_scanner ${ARGS}
 ```
 
 Scan by category (gpu, ml, perf, hw, compute, audio, all):
 ```bash
-cd /Users/caiovicentino/Desktop/apis && make tools/batch_scan 2>/dev/null && tools/batch_scan ${ARGS}
+make tools/batch_scan 2>/dev/null && tools/batch_scan ${ARGS}
 ```
 
 Deep-probe a specific class (two arguments: Framework ClassName):
 ```bash
-cd /Users/caiovicentino/Desktop/apis && make tools/deep_probe 2>/dev/null && tools/deep_probe ${ARGS}
+make tools/deep_probe 2>/dev/null && tools/deep_probe ${ARGS}
 ```
 
 Highlight factory methods, interesting properties, action methods, and protocols. Skip boilerplate.

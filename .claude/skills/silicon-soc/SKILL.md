@@ -16,10 +16,10 @@ for i in 0 1 2; do sysctl hw.perflevel${i}.name hw.perflevel${i}.physicalcpu hw.
 sysctl hw.optional.arm.FEAT_SME hw.optional.arm.FEAT_SME2 hw.optional.arm.FEAT_BF16 hw.optional.arm.FEAT_I8MM hw.optional.arm.sme_max_svl_b 2>/dev/null
 
 # GPU
-cd /Users/caiovicentino/Desktop/apis && make probes/gpu_probe 2>/dev/null && probes/gpu_probe 2>&1 | head -40
+make probes/gpu_probe 2>/dev/null && probes/gpu_probe 2>&1 | head -40
 
 # IOReport channels
-cd /Users/caiovicentino/Desktop/apis && make tools/full_soc_map 2>/dev/null && tools/full_soc_map 2>&1 | grep -E '(═══|TOTAL)'
+make tools/full_soc_map 2>/dev/null && tools/full_soc_map 2>&1 | grep -E '(═══|TOTAL)'
 
 # Platform ID
 ioreg -l -w0 2>/dev/null | grep -E '"(compatible|platform-name|model)"' | head -5

@@ -10,17 +10,17 @@ Profile the energy cost of running a command on Apple Silicon.
 
 1. Build tools:
 ```bash
-cd /Users/caiovicentino/Desktop/apis && make probes/soc_power 2>/dev/null
+make probes/soc_power 2>/dev/null
 ```
 
 2. Take a baseline sample (idle):
 ```bash
-cd /Users/caiovicentino/Desktop/apis && probes/soc_power 1 500 2>&1
+probes/soc_power 1 500 2>&1
 ```
 
 3. Run the command while sampling energy in background:
 ```bash
-cd /Users/caiovicentino/Desktop/apis
+
 probes/soc_power 100 200 > /tmp/silicon_profile_power.txt 2>&1 &
 POWER_PID=$!
 time ${ARGS}

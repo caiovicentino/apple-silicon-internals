@@ -7,7 +7,7 @@ argument-hint: "[samples] [interval_ms]"
 Start live monitoring of the SoC with real-time data.
 
 ```bash
-cd /Users/caiovicentino/Desktop/apis && make probes/soc_power 2>/dev/null && probes/soc_power ${ARGS:-5 1000}
+make probes/soc_power 2>/dev/null && probes/soc_power ${ARGS:-5 1000}
 ```
 
 First argument: number of samples (default 5). Second: interval in ms (default 1000).

@@ -8,7 +8,7 @@ Run the SoC power monitor to read energy data from all subsystems via IOReport.
 
 Build if needed, then run:
 ```bash
-cd /Users/caiovicentino/Desktop/apis && make probes/soc_power 2>/dev/null && probes/soc_power ${ARGS:-3 1000}
+make probes/soc_power 2>/dev/null && probes/soc_power ${ARGS:-3 1000}
 ```
 
 The first argument is number of samples (default 3), second is interval in ms (default 1000).

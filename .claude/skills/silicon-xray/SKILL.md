@@ -39,7 +39,7 @@ codesign -d --entitlements :- "$APP_PATH" 2>/dev/null
 ### 4. Scan interesting private frameworks the app uses
 For each interesting private framework found, run:
 ```bash
-cd /Users/caiovicentino/Desktop/apis && make tools/framework_scanner 2>/dev/null
+make tools/framework_scanner 2>/dev/null
 tools/framework_scanner <FrameworkName> 2>&1 | grep -E '(CLASS:|Total)' | head -20
 ```
 

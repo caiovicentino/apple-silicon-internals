@@ -8,17 +8,17 @@ Run performance benchmarks on Apple Silicon.
 
 ## Quick compute benchmark (CPU vs GPU):
 ```bash
-cd /Users/caiovicentino/Desktop/apis && make benchmarks/inference_engine 2>/dev/null && benchmarks/inference_engine ${ARGS:-512}
+make benchmarks/inference_engine 2>/dev/null && benchmarks/inference_engine ${ARGS:-512}
 ```
 
 ## Model capacity analysis:
 ```bash
-cd /Users/caiovicentino/Desktop/apis && make benchmarks/capacity_test 2>/dev/null && benchmarks/capacity_test
+make benchmarks/capacity_test 2>/dev/null && benchmarks/capacity_test
 ```
 
 ## Real transformer architecture benchmark:
 ```bash
-cd /Users/caiovicentino/Desktop/apis && make benchmarks/real_model_bench 2>/dev/null && benchmarks/real_model_bench
+make benchmarks/real_model_bench 2>/dev/null && benchmarks/real_model_bench
 ```
 
 Focus on practical answers: can model X fit? How fast? CPU or GPU? Note these are synthetic benchmarks — real performance depends on quantization and memory bandwidth.
