@@ -30,3 +30,5 @@ benchmarks/kvcache_compress
 
 # Claude Code project data (user-specific)
 .claude/projects/
+docs/silicon_report.wav
+.claude/settings.json
