@@ -1,0 +1,32 @@
+# Compiled binaries (rebuild with: make all)
+tools/framework_scanner
+tools/deep_probe
+tools/batch_scan
+tools/full_soc_map
+probes/clpc_probe
+probes/gpu_probe
+probes/intelligence_probe
+probes/soc_power
+pocs/metal_tensor_poc
+pocs/ane_direct
+pocs/gamemode_ctl
+pocs/mtl4ml_engine
+benchmarks/inference_engine
+benchmarks/capacity_test
+benchmarks/real_model_bench
+benchmarks/advantage_test
+benchmarks/mps_quant_bench
+benchmarks/cpu_attn_bench
+benchmarks/bnns_mha_bench
+benchmarks/kvcache_compress
+
+# Build artifacts
+*.o
+*.dSYM/
+
+# macOS
+.DS_Store
+._*
+
+# Claude Code project data (user-specific)
+.claude/projects/
