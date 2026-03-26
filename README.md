@@ -19,6 +19,11 @@ Built on macOS 26 Tahoe (developer beta), Apple M4 Mac mini. Based on the runtim
   - [SoC Telemetry (1009 Channels)](#soc-telemetry-1009-channels)
   - [CLPC Performance Controller](#clpc-performance-controller)
   - [Apple M4 Architecture](#apple-m4-architecture)
+  - [Vector Database & Embeddings](#vector-database--embeddings)
+  - [Hidden ML Runtimes](#hidden-ml-runtimes)
+  - [100+ Apple Intelligence Use Cases](#apple-intelligence-use-cases)
+  - [macOS 26 New APIs (~455 classes)](#macos-26-new-apis)
+  - [M5 GPU Firmware](#m5-gpu-firmware)
 - [Benchmarks](#benchmarks)
 - [Repository Structure](#repository-structure)
 - [Building](#building)
@@ -68,8 +73,14 @@ benchmarks/inference_engine 512
 | `/silicon-entitlements <binary>` | Dump entitlements of any binary or app |
 | `/silicon-ocr <image>` | On-device OCR via Apple Vision |
 | `/silicon-detect <text>` | On-device language detection |
+| `/silicon-deepxray <app>` | Complete 11-phase app reverse engineering |
+| `/silicon-audit <app>` | Privacy/security audit with risk assessment |
+| `/silicon-compare <app1> <app2>` | Side-by-side app comparison (entitlements, frameworks, tracking) |
+| `/silicon-shaders [filter]` | Dump and analyze all 265 Metal shader libraries |
+| `/silicon-tts <text>` | Text-to-speech audio generation (184 voices, pt-BR) |
+| `/silicon-ner <text>` | Named entity recognition + data type detection |
 
-These are the first Apple Silicon hardware skills for AI agents. No MCP server needed — they work through Claude Code's native skill system.
+16 skills total. No MCP server needed — they work through Claude Code's native skill system.
 
 ---
 
@@ -380,7 +391,14 @@ All discovery via public Objective-C runtime introspection functions:
 5. `dlsym()` resolves C functions in private libraries (`libIOReport.dylib`)
 6. `codesign -d --entitlements` extracts entitlements from signed binaries
 
-Statistics: 2,152 private frameworks enumerated. 657+ ML/AI classes discovered. 93 Metal 4 classes found. 55+ Apple Intelligence models mapped. 10 agent skills created.
+Statistics: 2,152 private frameworks enumerated. 1000+ ML/AI classes discovered. 93 Metal 4 classes found. 55+ Apple Intelligence models mapped. 100+ AI use cases documented. ~455 new macOS 26 classes found. 614 CoreML models on system. 265 Metal shader libraries. 16 Claude Code skills created. See `docs/` for detailed findings:
+
+- `DEEP_REVERSING.md` — CoreML models, ANE format, Metal shaders, XPC daemons
+- `MACOS26_NEW_APIS.md` — 455 new classes (Image Playground, OSIntelligence, IntelligenceFlow)
+- `VECTOR_SEARCH.md` — Native vector database + embeddings + on-device RAG
+- `HIDDEN_RUNTIMES.md` — Morpheus (MLX+Python), XOJIT (JIT/LLVM), ODIE (ML VM), TuriCore
+- `APPLE_INTELLIGENCE_USE_CASES.md` — 100+ use cases with safety filters
+- `BLOG_POST.md` — Ready-to-publish blog post
 
 ---
 
